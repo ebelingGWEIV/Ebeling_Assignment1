@@ -23,8 +23,8 @@ public:
     double Monthlypayment = 0;
     double RunningPrinciple = 0;
     double Rate = 0;
-    int n = 0;
-    int monthsPassed = 0;
+    int totalMonths = 0; // Number of months on the loan
+    int monthsPassed = -1; //Running total for months passed
 
     double Extra = 0;
     double totalPrinciplePaid = 0;

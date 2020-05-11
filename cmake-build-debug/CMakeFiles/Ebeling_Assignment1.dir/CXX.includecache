@@ -6,27 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.cpp
-iostream
--
-fstream
--
-string
--
-Loan.h
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
-iomanip
--
-AmortizationTable.h
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
-
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
-
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.cpp
-Loan.h
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
-iostream
--
 
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
 string
@@ -35,12 +15,10 @@ string
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/main.cpp
 iostream
 -
-fstream
--
 string
 -
 Loan.h
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
-iomanip
--
+AmortizationTable.h
+C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
 

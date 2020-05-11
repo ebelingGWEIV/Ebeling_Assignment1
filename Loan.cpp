@@ -7,6 +7,7 @@ Loan::Loan(string name, double principle, double rate, int months, double extra)
     this->RunningPrinciple = principle;
     this->Rate = rate / 12;
     this->Extra = extra;
+    this->totalMonths = months;
     this->Monthlypayment = calculateMonthlyPayment(RunningPrinciple, Rate, months, Extra);
 }
 
@@ -44,7 +45,7 @@ double Loan::InterestPaidThisMonth() const {
 
 double Loan::PrinciplePaidThisMonth() {
     if(Monthlypayment <= RunningPrinciple)
-        return Monthlypayment - RunningPrinciple * Rate + Extra;
+        return (Monthlypayment - Extra) - RunningPrinciple * Rate + Extra; //extra is accounted for in monthly payment, but needed to be removed for this calculation
     else {
         LastMonth();
         return RunningPrinciple;
