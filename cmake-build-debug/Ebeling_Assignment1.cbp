@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.cpp">
+			<Option target="Ebeling_Assignment1"/>
+		</Unit>
+		<Unit filename="C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h">
+			<Option target="Ebeling_Assignment1"/>
+		</Unit>
 		<Unit filename="C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.cpp">
 			<Option target="Ebeling_Assignment1"/>
 		</Unit>

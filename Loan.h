@@ -12,37 +12,41 @@ using namespace std;
 class Loan {
 
 private:
+    /// Adjust the last monthly payment to prevent overpaying.
     void LastMonth();
+
+    /// Increase the current month.
+    void IncrementMonths() {monthsPassed++;}
+
 public:
-
     string LoanName = "";
-    double M = 0;
-    double P = 0;
-    double r = 0;
+    double Monthlypayment = 0;
+    double RunningPrinciple = 0;
+    double Rate = 0;
     int n = 0;
-    int monthsRemaining = 0;
-    double e = 0;
+    int monthsPassed = 0;
 
+    double Extra = 0;
     double totalPrinciplePaid = 0;
     double totalInterestPaid = 0;
     double totalPaid = 0;
     double monthPrincePaid = 0;
     double monthInterestPaid = 0;
 
-
+    /// Create a new loan.
     Loan(string, double, double, int, double);
 
     /// Calculate the minimum monthly payment for a loan
-    double calculateMonthlyPayment(double principle, double rate, int months, double extra) const;
+    static double calculateMonthlyPayment(double principle, double rate, int months, double extra) ;
 
+    /// Calculate the money going to towards interest this month.
     double InterestPaidThisMonth() const ;
 
+    /// Calculate the money going towards the principle this month.
     double PrinciplePaidThisMonth() ;
 
-    void IncrementMonths() {monthsRemaining++;}
-
-    void NewMonth();
+    /// Calculate the values for a new month.
+    void CalculateNewMonth();
 };
-
 
 #endif //EBELINGASSIGNMENT1_LOAN_H

@@ -124,6 +124,33 @@ Ebeling_Assignment1\fast:
 	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\build
 .PHONY : Ebeling_Assignment1\fast
 
+AmortizationTable.obj: AmortizationTable.cpp.obj
+
+.PHONY : AmortizationTable.obj
+
+# target to build an object file
+AmortizationTable.cpp.obj:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj
+.PHONY : AmortizationTable.cpp.obj
+
+AmortizationTable.i: AmortizationTable.cpp.i
+
+.PHONY : AmortizationTable.i
+
+# target to preprocess a source file
+AmortizationTable.cpp.i:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.i
+.PHONY : AmortizationTable.cpp.i
+
+AmortizationTable.s: AmortizationTable.cpp.s
+
+.PHONY : AmortizationTable.s
+
+# target to generate assembly for a file
+AmortizationTable.cpp.s:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.s
+.PHONY : AmortizationTable.cpp.s
+
 Loan.obj: Loan.cpp.obj
 
 .PHONY : Loan.obj
@@ -187,6 +214,9 @@ help:
 	@echo ... Ebeling_Assignment1
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... AmortizationTable.obj
+	@echo ... AmortizationTable.i
+	@echo ... AmortizationTable.s
 	@echo ... Loan.obj
 	@echo ... Loan.i
 	@echo ... Loan.s

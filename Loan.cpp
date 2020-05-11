@@ -2,17 +2,15 @@
 #include <iostream>
 
 
-using namespace std;
-
 Loan::Loan(string name, double principle, double rate, int months, double extra) {
-    LoanName = name;
-    P = principle;
-    r = rate/12;
-    e = extra;
-    M = calculateMonthlyPayment(P, r, months, e);
+    this->LoanName = name;
+    this->RunningPrinciple = principle;
+    this->Rate = rate / 12;
+    this->Extra = extra;
+    this->Monthlypayment = calculateMonthlyPayment(RunningPrinciple, Rate, months, Extra);
 }
 
-double Loan::calculateMonthlyPayment(double principle, double rate, int months, double extra) const
+double Loan::calculateMonthlyPayment(double principle, double rate, int months, double extra)
 {
     double numer = rate * principle * pow(1+rate,months);
     double denom = -1 + pow((1+rate),months);
@@ -21,7 +19,7 @@ double Loan::calculateMonthlyPayment(double principle, double rate, int months, 
     return monthly+extra;
 }
 
-void Loan::NewMonth() {
+void Loan::CalculateNewMonth() {
     //Calculate the payments needed for this month
     monthInterestPaid = InterestPaidThisMonth();
     monthPrincePaid = PrinciplePaidThisMonth();
@@ -29,23 +27,26 @@ void Loan::NewMonth() {
     //Calculate the sum totals
     totalPrinciplePaid += monthPrincePaid;
     totalInterestPaid += monthInterestPaid;
-    P -= monthPrincePaid;
+    RunningPrinciple -= monthPrincePaid;
     totalPaid = totalPrinciplePaid + totalInterestPaid;
+
+    //Increase to the next month
+    IncrementMonths();
 }
 
 void Loan::LastMonth(){
-    M = P + monthInterestPaid;
+    Monthlypayment = RunningPrinciple + monthInterestPaid;
 }
 
 double Loan::InterestPaidThisMonth() const {
-    return P*r;
+    return RunningPrinciple * Rate;
 }
 
 double Loan::PrinciplePaidThisMonth() {
-    if(M <= P)
-        return M - P * r + e;
+    if(Monthlypayment <= RunningPrinciple)
+        return Monthlypayment - RunningPrinciple * Rate + Extra;
     else {
         LastMonth();
-        return P;
+        return RunningPrinciple;
     }
 }
