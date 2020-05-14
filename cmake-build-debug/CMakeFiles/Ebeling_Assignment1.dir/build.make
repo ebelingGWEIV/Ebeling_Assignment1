@@ -77,28 +77,9 @@ CMakeFiles\Ebeling_Assignment1.dir\main.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Ebeling_Assignment1.dir\main.cpp.s /c "C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\main.cpp"
 <<
 
-CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.obj: CMakeFiles\Ebeling_Assignment1.dir\flags.make
-CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.obj: ..\Loan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ebeling_Assignment1.dir/Loan.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.obj /FdCMakeFiles\Ebeling_Assignment1.dir\ /FS -c "C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\Loan.cpp"
-<<
-
-CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ebeling_Assignment1.dir/Loan.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\Loan.cpp"
-<<
-
-CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ebeling_Assignment1.dir/Loan.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.s /c "C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\Loan.cpp"
-<<
-
 CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj: CMakeFiles\Ebeling_Assignment1.dir\flags.make
 CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj: ..\AmortizationTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ebeling_Assignment1.dir/AmortizationTable.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ebeling_Assignment1.dir/AmortizationTable.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj /FdCMakeFiles\Ebeling_Assignment1.dir\ /FS -c "C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\AmortizationTable.cpp"
 <<
@@ -118,18 +99,16 @@ CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.s: cmake_force
 # Object files for target Ebeling_Assignment1
 Ebeling_Assignment1_OBJECTS = \
 "CMakeFiles\Ebeling_Assignment1.dir\main.cpp.obj" \
-"CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.obj" \
 "CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj"
 
 # External object files for target Ebeling_Assignment1
 Ebeling_Assignment1_EXTERNAL_OBJECTS =
 
 Ebeling_Assignment1.exe: CMakeFiles\Ebeling_Assignment1.dir\main.cpp.obj
-Ebeling_Assignment1.exe: CMakeFiles\Ebeling_Assignment1.dir\Loan.cpp.obj
 Ebeling_Assignment1.exe: CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.obj
 Ebeling_Assignment1.exe: CMakeFiles\Ebeling_Assignment1.dir\build.make
 Ebeling_Assignment1.exe: CMakeFiles\Ebeling_Assignment1.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Ebeling_Assignment1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Ebeling_Assignment1.exe"
 	"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Ebeling_Assignment1.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Ebeling_Assignment1.dir\objects1.rsp @<<
  /out:Ebeling_Assignment1.exe /implib:Ebeling_Assignment1.lib /pdb:"C:\Users\George\CLionProjects\CIS 263\Ebeling_Assignment1\cmake-build-debug\Ebeling_Assignment1.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

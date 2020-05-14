@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Ebeling_Assignment1.dir/AmortizationTable.cpp.obj"
-  "CMakeFiles/Ebeling_Assignment1.dir/Loan.cpp.obj"
   "CMakeFiles/Ebeling_Assignment1.dir/main.cpp.obj"
   "Ebeling_Assignment1.exe"
   "Ebeling_Assignment1.exe.manifest"

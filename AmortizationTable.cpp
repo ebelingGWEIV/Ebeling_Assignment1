@@ -28,13 +28,6 @@ void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
     CloseLoanFile(loanFile, safeToWrite); // Close file once complete.
 }
 
-void AmortizationTable::makeAmortizationTable(string name, double principle, double rate, int months, double extra) {
-    Loan newLoan = Loan(name, principle, rate, months, extra);
-    Loan *pLoan = &newLoan;
-
-    makeAmortizationTable(pLoan);
-}
-
 void AmortizationTable::PrintLoanHeader(Loan *&myLoan, ostream & output)
 {
     output << fixed << setprecision(2); // Set the float precision.

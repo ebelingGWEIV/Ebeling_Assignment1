@@ -29,8 +29,6 @@ public:
     /// The table is printed in the console and to a file.
     static void makeAmortizationTable(Loan *&);
 
-    /// Make an amortization table with the given information.
-    static void makeAmortizationTable(string, double, double, int, double);
 };
 
 
