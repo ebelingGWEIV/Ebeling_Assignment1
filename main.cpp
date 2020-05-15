@@ -17,10 +17,10 @@ Loan GatherData();
 
 int main() {
 
-//    Loan newLoan = GatherData();
-//    Loan *pLoan = &newLoan;
-//    AmortizationTable::makeAmortizationTable(pLoan);
-    AmortizationTable::makeAmortizationTable("test_01 loan", 180000, .04, 360, 300);
+    Loan newLoan = GatherData();
+    Loan *pLoan = &newLoan;
+    AmortizationTable::makeAmortizationTable(pLoan);
+//    AmortizationTable::makeAmortizationTable("test_01 loan", 180000, .04, 360, 300);
 
 
     return 0;

@@ -27,7 +27,7 @@ void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
     PrintLoanHeader(pLoan, loanFile); //Print to file
 
     //Calculate the values for each month and then display those values in a table.
-    while(pLoan->RunningPrinciple > 0)
+    while(pLoan->GetRunningPrinciple() > 0)
     {
         pLoan->CalculateNewMonth(); //Start a new month
         PrintLoanOutput(pLoan, cout); //Print to console
@@ -59,11 +59,11 @@ void AmortizationTable::PrintLoanHeader(Loan *&myLoan, ostream & output)
     output << fixed << setprecision(2); // Set the float precision.
 
     output << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
-    output << myLoan->LoanName << " -";
-    output << " P:" << myLoan->RunningPrinciple;
-    output << " n:" << myLoan->totalMonths;
-    output << " r:" << myLoan->Rate*12*100 << "%"; //convert the rate into a percent
-    output  << " e:" << myLoan->Extra;
+    output << myLoan->GetLoanName() << " -";
+    output << " P:" << myLoan->GetRunningPrinciple();
+    output << " n:" << myLoan->GetTotalMonths();
+    output << " r:" << myLoan->GetRate()*12*100 << "%"; //convert the rate into a percent
+    output  << " e:" << myLoan->GetExtra();
     output << endl;
     output << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
     output << "month\tmonthlyPayment\tprincipleRemaining\tprinciplePaid\tinterestPaid\ttotalPaid\ttotalPrinciplePaid\ttotalInterestPaid" << endl;
@@ -76,14 +76,14 @@ void AmortizationTable::PrintLoanOutput(Loan * &myLoan, ostream & output)
 {
     output << fixed << setprecision(2); // Set the float precision
 
-    printLoanElement(myLoan->monthsPassed, 8, output);
-    printLoanElement(myLoan->Monthlypayment, 16, output);
-    printLoanElement(myLoan->RunningPrinciple, 20, output);
-    printLoanElement(myLoan->monthPrincePaid,16, output);
-    printLoanElement(myLoan->monthInterestPaid,16, output);
-    printLoanElement(myLoan->totalPaid, 12, output);
-    printLoanElement(myLoan->totalPrinciplePaid, 20, output);
-    printLoanElement(myLoan->totalInterestPaid, 10, output);
+    printLoanElement(myLoan->GetMonthsPassed(), 8, output);
+    printLoanElement(myLoan->GetMonthlyPayment(), 16, output);
+    printLoanElement(myLoan->GetRunningPrinciple(), 20, output);
+    printLoanElement(myLoan->GetMonthPrinciplePaid(), 16, output);
+    printLoanElement(myLoan->GetMonthInterestPaid(),16, output);
+    printLoanElement(myLoan->GetTotalPaid(), 12, output);
+    printLoanElement(myLoan->GetTotalPrinciplePaid(), 20, output);
+    printLoanElement(myLoan->GetTotalInterestPaid(), 10, output);
     output << endl;
 }
 
@@ -97,7 +97,7 @@ void AmortizationTable::CloseLoanFile(ofstream &loanFile) {
 /// \param pLoan The loan object that will be using the file.
 /// \param loanFile File stream for the file to be written to.
 void AmortizationTable::OpenLoanFile(Loan *const &pLoan, ofstream &loanFile) {
-    string fileName = pLoan->LoanName + ".txt";
+    string fileName = pLoan->GetLoanName() + ".txt";
     loanFile.open(fileName);
 }
 

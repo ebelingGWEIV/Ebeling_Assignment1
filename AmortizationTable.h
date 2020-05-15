@@ -26,7 +26,7 @@ private:
     static void CloseLoanFile(ofstream & );
 
 
-    static void OpenLoanFile(Loan *const &pLoan, ofstream &loanFile);
+    static void OpenLoanFile(Loan *const &, ofstream &);
 
 
     template<typename T> static void printLoanElement(T t, const int & , ostream &);
