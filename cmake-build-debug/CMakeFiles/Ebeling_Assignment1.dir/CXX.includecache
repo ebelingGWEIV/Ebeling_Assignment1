@@ -8,13 +8,7 @@
 
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
 
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
-string
--
-utility
--
-
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/main.cpp
+C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/EbelingAssignment1.cpp
 iostream
 -
 string
@@ -23,4 +17,10 @@ Loan.h
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
 AmortizationTable.h
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
+
+C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
+string
+-
+utility
+-
 

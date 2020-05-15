@@ -3,4 +3,4 @@ project(Ebeling_Assignment1)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Ebeling_Assignment1 main.cpp Loan.h AmortizationTable.cpp AmortizationTable.h)
+add_executable(Ebeling_Assignment1 EbelingAssignment1.cpp Loan.h AmortizationTable.cpp AmortizationTable.h)

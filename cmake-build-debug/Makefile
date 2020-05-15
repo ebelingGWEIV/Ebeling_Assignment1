@@ -151,32 +151,32 @@ AmortizationTable.cpp.s:
 	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\AmortizationTable.cpp.s
 .PHONY : AmortizationTable.cpp.s
 
-main.obj: main.cpp.obj
+EbelingAssignment1.obj: EbelingAssignment1.cpp.obj
 
-.PHONY : main.obj
+.PHONY : EbelingAssignment1.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\main.cpp.obj
-.PHONY : main.cpp.obj
+EbelingAssignment1.cpp.obj:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\EbelingAssignment1.cpp.obj
+.PHONY : EbelingAssignment1.cpp.obj
 
-main.i: main.cpp.i
+EbelingAssignment1.i: EbelingAssignment1.cpp.i
 
-.PHONY : main.i
+.PHONY : EbelingAssignment1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\main.cpp.i
-.PHONY : main.cpp.i
+EbelingAssignment1.cpp.i:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\EbelingAssignment1.cpp.i
+.PHONY : EbelingAssignment1.cpp.i
 
-main.s: main.cpp.s
+EbelingAssignment1.s: EbelingAssignment1.cpp.s
 
-.PHONY : main.s
+.PHONY : EbelingAssignment1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\main.cpp.s
-.PHONY : main.cpp.s
+EbelingAssignment1.cpp.s:
+	$(MAKE) -f CMakeFiles\Ebeling_Assignment1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Ebeling_Assignment1.dir\EbelingAssignment1.cpp.s
+.PHONY : EbelingAssignment1.cpp.s
 
 # Help Target
 help:
@@ -190,9 +190,9 @@ help:
 	@echo ... AmortizationTable.obj
 	@echo ... AmortizationTable.i
 	@echo ... AmortizationTable.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... EbelingAssignment1.obj
+	@echo ... EbelingAssignment1.i
+	@echo ... EbelingAssignment1.s
 .PHONY : help
 
 
