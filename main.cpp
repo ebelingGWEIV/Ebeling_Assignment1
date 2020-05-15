@@ -1,3 +1,11 @@
+/// -------------------------------------------------------------------
+/// Ebeling, George Assignment 1
+/// CIS 263 - Dr. Leidig
+/// This program asks for input from a user regarding loan information
+/// and then prints an amortization table to the console and to a
+/// .txt file.
+/// -------------------------------------------------------------------
+
 #include <iostream>
 #include <string>
 #include "Loan.h"
@@ -10,10 +18,9 @@ Loan GatherData();
 int main() {
 
 //    Loan newLoan = GatherData();
-    Loan newLoan = Loan("new loan", 180000, .04, 360, 300);
-    Loan *pLoan = &newLoan;
-
-    AmortizationTable::makeAmortizationTable(pLoan);
+//    Loan *pLoan = &newLoan;
+//    AmortizationTable::makeAmortizationTable(pLoan);
+    AmortizationTable::makeAmortizationTable("test_01 loan", 180000, .04, 360, 300);
 
 
     return 0;

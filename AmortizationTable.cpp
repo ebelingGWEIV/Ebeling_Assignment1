@@ -1,20 +1,30 @@
+/// -------------------------------------------------------------------
+/// Ebeling, George Assignment 1
+/// CIS 263 - Dr. Leidig
+/// Implements AmortizationTable.h to print an Amortization table in
+/// the console and a .txt file.
+/// -------------------------------------------------------------------
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include "Loan.h"
 #include <iomanip>
+#include <utility>
 #include "AmortizationTable.h"
 
+/// Creates an amortization table and prints to the console and creates an output .txt file with the same name as the loan.
+/// \param pLoan Loan to create a table for. Only remaining months will be shown.
 void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
 
     // Make a loan file
     ofstream loanFile;
-    // Verify that the loan file is available.
-    bool safeToWrite = checkLoanFile(pLoan, loanFile);
+
+    OpenLoanFile(pLoan, loanFile);
 
     //Print amortization header
     PrintLoanHeader(pLoan, cout); //Print to console
-    PrintLoanOutput(pLoan, loanFile); //Print to file
+    PrintLoanHeader(pLoan, loanFile); //Print to file
 
     //Calculate the values for each month and then display those values in a table.
     while(pLoan->RunningPrinciple > 0)
@@ -22,30 +32,50 @@ void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
         pLoan->CalculateNewMonth(); //Start a new month
         PrintLoanOutput(pLoan, cout); //Print to console
 
-        if(safeToWrite) PrintLoanOutput(pLoan, loanFile); //Print to file if safe
+        PrintLoanOutput(pLoan, loanFile); //Print to file
     }
 
-    CloseLoanFile(loanFile, safeToWrite); // Close file once complete.
+    CloseLoanFile(loanFile); // Close file once complete.
 }
 
+/// Make an amortization table given the loan information.
+/// \param name A name for the loan
+/// \param principle Amount owed on the loan
+/// \param rate Annual interest rate of the loan
+/// \param months Number of months remaining on the loan
+/// \param extra Additional amount to pay during each monthly payment
+void AmortizationTable::makeAmortizationTable(string name, double principle, double rate, int months, double extra) {
+    Loan newLoan = Loan(std::move(name), principle, rate, months, extra);
+    Loan *pLoan = &newLoan;
+
+    makeAmortizationTable(pLoan);
+}
+
+/// Create the header for the amortization table in the given stream.
+/// \param myLoan Loan to print
+/// \param output Stream to print to
 void AmortizationTable::PrintLoanHeader(Loan *&myLoan, ostream & output)
 {
     output << fixed << setprecision(2); // Set the float precision.
 
-    output << "---------------------------------------------" << endl;
+    output << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
     output << myLoan->LoanName << " -";
     output << " P:" << myLoan->RunningPrinciple;
     output << " n:" << myLoan->totalMonths;
     output << " r:" << myLoan->Rate*12*100 << "%"; //convert the rate into a percent
     output  << " e:" << myLoan->Extra;
     output << endl;
-    output << "---------------------------------------------" << endl;
+    output << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
     output << "month\tmonthlyPayment\tprincipleRemaining\tprinciplePaid\tinterestPaid\ttotalPaid\ttotalPrinciplePaid\ttotalInterestPaid" << endl;
 }
 
+/// Display a single row of the amortization table in the given stream.
+/// \param myLoan Loan to print
+/// \param output Stream to print to
 void AmortizationTable::PrintLoanOutput(Loan * &myLoan, ostream & output)
 {
-    output << fixed << setprecision(2);
+    output << fixed << setprecision(2); // Set the float precision
+
     printLoanElement(myLoan->monthsPassed, 8, output);
     printLoanElement(myLoan->Monthlypayment, 16, output);
     printLoanElement(myLoan->RunningPrinciple, 20, output);
@@ -57,23 +87,24 @@ void AmortizationTable::PrintLoanOutput(Loan * &myLoan, ostream & output)
     output << endl;
 }
 
-void AmortizationTable::CloseLoanFile(ofstream &loanFile, bool safeToWrite) {
-    if(!safeToWrite) {
-        cout << "Loan file could not be written to";
-    }
+/// Close the loan file.
+/// \param loanFile The ofstream to close
+void AmortizationTable::CloseLoanFile(ofstream &loanFile) {
     loanFile.close();
 }
 
-bool AmortizationTable::checkLoanFile(Loan *const &pLoan, ofstream &loanFile) {
-    if(!loanFile.is_open()) {
-        string fileName = pLoan->LoanName + ".txt";
-        loanFile.open(fileName);
-        return true;
-    }
-    return false;
+/// Creates a new Loan file. Will overwrite an existing .txt file of the same loan name.
+/// \param pLoan The loan object that will be using the file.
+/// \param loanFile File stream for the file to be written to.
+void AmortizationTable::OpenLoanFile(Loan *const &pLoan, ofstream &loanFile) {
+    string fileName = pLoan->LoanName + ".txt";
+    loanFile.open(fileName);
 }
 
-
+/// Push t into the given output stream.
+/// \param t Information to push into the stream.
+/// \param width Amount of space to be allotted.
+/// \param output The stream to push information to.
 template<typename T>
 void AmortizationTable::printLoanElement(T t, const int & width, ostream &output) {
     output << left << setw(width) << t;

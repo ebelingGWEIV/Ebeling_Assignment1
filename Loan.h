@@ -1,6 +1,10 @@
-//
-// Created by George on 5/8/2020.
-//
+/// -------------------------------------------------------------------
+/// Ebeling, George Assignment 1
+/// CIS 263 - Dr. Leidig
+/// Stores and claculates Loan information.
+/// Calling CalcualteNewMonth will refresh calculated values for a
+/// new month.
+/// -------------------------------------------------------------------
 
 #ifndef EBELINGASSIGNMENT1_LOAN_H
 #define EBELINGASSIGNMENT1_LOAN_H
@@ -18,18 +22,18 @@ private:
         Monthlypayment = RunningPrinciple + monthInterestPaid;
     }
 
-    /// Increase the current month.
+    /// Increase the current month by one.
     void IncrementMonths() {monthsPassed++;}
 
 public:
     string LoanName = "";
-    double Monthlypayment = 0;
     double RunningPrinciple = 0;
     double Rate = 0;
     int totalMonths = 0; // Number of months on the loan
-    int monthsPassed = -1; //Running total for months passed
 
-    double Extra = 0;
+    int monthsPassed = -1; //Running total for months passed
+    double Monthlypayment = 0; //Amount to pay each month
+    double Extra = 0; // Amount extra to pay each month
     double totalPrinciplePaid = 0;
     double totalInterestPaid = 0;
     double totalPaid = 0;
@@ -37,6 +41,11 @@ public:
     double monthInterestPaid = 0;
 
     /// Create a new loan.
+    /// \param name A label for the loan
+    /// \param principle Amount owed on the loan
+    /// \param rate Annual interest rate of the loan
+    /// \param months Number of months on the loan
+    /// \param extra Additonal funds to pay beyond the required minimum payment
     Loan(string name, double principle, double rate, int months, double extra) {
         this->LoanName = std::move(name);
         this->RunningPrinciple = principle;
@@ -46,7 +55,12 @@ public:
         this->Monthlypayment = calculateMonthlyPayment(RunningPrinciple, Rate, months, Extra);
     }
 
-    /// Calculate the minimum monthly payment for a loan
+    /// Calculate the minimum monthly payment for a loan.
+    /// \param principle Amount owed on the loan
+    /// \param rate Monthly interest rate of the loan
+    /// \param months Number of months on the loan
+    /// \param extra Additional funds to pay beyond the required minimum payment
+    /// \return Minimum monthly payment
     static double calculateMonthlyPayment(double principle, double rate, int months, double extra)
     {
         double numer = rate * principle * pow(1+rate,months);
@@ -57,21 +71,25 @@ public:
     }
 
     /// Calculate the money going to towards interest this month.
+    /// \return The number of dollars that went towards paying off interest this month.
     double InterestPaidThisMonth() const {
         return RunningPrinciple * Rate;
     }
 
     /// Calculate the money going towards the principle this month.
+    /// \return The number of dollars that went towards paying off the principle this month.
     double PrinciplePaidThisMonth() {
+        //If the monthly payment is less than the remaining principle, pay the monthly payment
         if(Monthlypayment <= RunningPrinciple)
-            return (Monthlypayment - Extra) - RunningPrinciple * Rate + Extra; //extra is accounted for in monthly payment, but needed to be removed for this calculation
+            //extra is accounted for in monthly payment, but needed to be removed for this calculation
+            return (Monthlypayment - Extra) - RunningPrinciple * Rate + Extra; //Likely the source of calculation errors
         else {
             LastMonth();
             return RunningPrinciple;
         }
     }
 
-    /// Calculate the values for a new month.
+    /// Calculate the values for a new month. Updates running totals: totalPrinciplePaid, totalInterestPaid, RunningPrinciple, and totalPaid.
     void CalculateNewMonth() {
         //Calculate the payments needed for this month
         monthInterestPaid = InterestPaidThisMonth();
