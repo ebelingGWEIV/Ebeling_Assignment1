@@ -48,7 +48,7 @@ public:
     [[nodiscard]] int GetTotalMonths() const { return totalMonths; }
 
     /// \return The annual interest rate of the loan.
-    [[nodiscard]] double GetRate() const { return Rate*12; }
+    [[nodiscard]] double GetRate() const { return Rate; }
     [[nodiscard]] double GetExtra() const { return Extra; }
 
     [[nodiscard]] double GetMonthsPassed() const { return monthsPassed; }
@@ -92,7 +92,7 @@ public:
 
     /// Calculate the money going to towards interest this month.
     /// \return The number of dollars that went towards paying off interest this month.
-    [[nodiscard]] double InterestPaidThisMonth() const {
+    double InterestPaidThisMonth() const {
         return RunningPrinciple * Rate;
     }
 

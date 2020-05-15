@@ -20,8 +20,7 @@ int main() {
     Loan newLoan = GatherData();
     Loan *pLoan = &newLoan;
     AmortizationTable::makeAmortizationTable(pLoan);
-//    AmortizationTable::makeAmortizationTable("test_01 loan", 180000, .04, 360, 300);
-
+//    AmortizationTable::makeAmortizationTable("Ebeling Assignment 1", 180000, .04, 360, 300);
 
     return 0;
 }
@@ -40,9 +39,8 @@ Loan GatherData()
     cout <<"Please enter the principle value of the loan : " << endl;
     cin >> principle;
 
-    cout <<"\nPlease enter the interest rate of the loan (ex. 0.06): " << endl;
+    cout <<"\nPlease enter the annual interest rate of the loan (ex. 0.06): " << endl;
     cin >> rate;
-    rate = rate / 12;
 
     cout <<"\nPlease enter the number of months on the loan: " << endl;
     cin >> numMonths;

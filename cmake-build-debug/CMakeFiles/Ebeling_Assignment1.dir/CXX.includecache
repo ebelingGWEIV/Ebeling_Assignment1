@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.cpp
-iostream
--
-fstream
--
-string
--
-Loan.h
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h
-iomanip
--
-utility
--
-AmortizationTable.h
-C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
-
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/AmortizationTable.h
 
 C:/Users/George/CLionProjects/CIS 263/Ebeling_Assignment1/Loan.h

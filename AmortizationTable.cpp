@@ -11,6 +11,7 @@
 #include "Loan.h"
 #include <iomanip>
 #include <utility>
+#include <filesystem>
 #include "AmortizationTable.h"
 
 /// Creates an amortization table and prints to the console and creates an output .txt file with the same name as the loan.
@@ -20,7 +21,7 @@ void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
     // Make a loan file
     ofstream loanFile;
 
-    OpenLoanFile(pLoan, loanFile);
+    bool fileCreated = OpenLoanFile(pLoan, loanFile);
 
     //Print amortization header
     PrintLoanHeader(pLoan, cout); //Print to console
@@ -35,7 +36,7 @@ void AmortizationTable::makeAmortizationTable(Loan *&pLoan) {
         PrintLoanOutput(pLoan, loanFile); //Print to file
     }
 
-    CloseLoanFile(loanFile); // Close file once complete.
+    CloseLoanFile(loanFile, fileCreated); // Close file stream once complete.
 }
 
 /// Make an amortization table given the loan information.
@@ -89,16 +90,21 @@ void AmortizationTable::PrintLoanOutput(Loan * &myLoan, ostream & output)
 
 /// Close the loan file.
 /// \param loanFile The ofstream to close
-void AmortizationTable::CloseLoanFile(ofstream &loanFile) {
+/// \param fileCreated A flag for the existence of the loan file.
+void AmortizationTable::CloseLoanFile(ofstream &loanFile, bool fileCreated) {
+    if(!fileCreated) cout << endl << "Output file was not created or written to" << endl;
     loanFile.close();
 }
 
 /// Creates a new Loan file. Will overwrite an existing .txt file of the same loan name.
 /// \param pLoan The loan object that will be using the file.
 /// \param loanFile File stream for the file to be written to.
-void AmortizationTable::OpenLoanFile(Loan *const &pLoan, ofstream &loanFile) {
+/// \return True if the loan file exists
+bool AmortizationTable::OpenLoanFile(Loan *const &pLoan, ofstream &loanFile) {
     string fileName = pLoan->GetLoanName() + ".txt";
     loanFile.open(fileName);
+
+    return filesystem::exists(pLoan->GetLoanName() + ".txt");
 }
 
 /// Push t into the given output stream.

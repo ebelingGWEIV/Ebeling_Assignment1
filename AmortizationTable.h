@@ -23,10 +23,10 @@ private:
     static void  PrintLoanOutput(Loan *&, ostream &);
 
 
-    static void CloseLoanFile(ofstream & );
+    static void CloseLoanFile(ofstream &, bool);
 
 
-    static void OpenLoanFile(Loan *const &, ofstream &);
+    static bool OpenLoanFile(Loan *const &, ofstream &);
 
 
     template<typename T> static void printLoanElement(T t, const int & , ostream &);
